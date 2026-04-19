@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { SiteSettings } from "@prisma/client";
+import type { SiteSettings } from "@/generated/prisma";
 import { BUSINESS } from "@/constants";
 import { Award, Leaf, Truck } from "lucide-react";
 
