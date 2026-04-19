@@ -5,14 +5,15 @@ import { cn } from "@/lib/utils";
 export function CtaSection() {
   return (
     <section className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="mx-auto max-w-6xl">
         <div
-          className="rounded-2xl px-8 py-14 text-center text-white shadow-lg md:px-16"
+          className="rounded-2xl overflow-hidden text-center text-white shadow-lg "
           style={{
             background:
-              "linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%)",
+              "url('/images/ctabg.webp') no-repeat center center / cover",
           }}
         >
+          <div className="flex flex-col px-8 py-16 md:px-16 items-center justify-center bg-black/50 p-4 mx-auto">
           <h2 className="font-display text-3xl font-bold md:text-4xl">
             Bring home your next favourite plant
           </h2>
@@ -28,6 +29,7 @@ export function CtaSection() {
           >
             Start Shopping
           </Link>
+          </div>
         </div>
       </div>
     </section>
