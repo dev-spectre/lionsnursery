@@ -1,10 +1,10 @@
 import Image from "next/image";
-import type { SiteSettings } from "@/generated/prisma";
+import type { SiteSettings } from "@prisma/client";
 import { BUSINESS } from "@/constants";
 import { Award, Leaf, Truck } from "lucide-react";
 
 const FALLBACK_TITLE = "Growing Green, Growing Together";
-const FALLBACK_BODY = `Lions Landscape Nursery has been cultivating quality plants and spreading the joy of gardening across Coimbatore since ${BUSINESS.established}. Nestled in the green heart of Kurumbapalayam, we carefully hand-pick every plant to ensure it arrives at your home healthy, vibrant, and ready to thrive. Whether you're a seasoned gardener or just starting your green journey, our expert team is here to guide you every step of the way.`;
+const FALLBACK_BODY = `Since ${BUSINESS.established}, Lions Landscape Nursery has stood as Coimbatore's premier destination for high-quality flora, dedicated to elevating the standard of local horticulture. Tucked away in the serene enclave of Kurumbapalayam, our facility operates on a rigorous philosophy of quality over convenience. Our team meticulously selects every sapling, shrub, and exotic specimen, conducting thorough health inspections to guarantee unmatched vitality. We don't simply sell plants; we ensure that every piece of greenery you introduce to your home is robust, well-acclimated, and prepared to flourish. For us, gardening is a committed partnership in creating thriving, sustainable, and vibrant outdoor landscapes.`;
 
 const stats = [
   { icon: Leaf, label: "500+ plants delivered", sub: "Across Coimbatore" },
