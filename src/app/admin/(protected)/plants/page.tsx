@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { Category } from "@/generated/prisma";
+import type { Category } from "@/generated/prisma/client";
 import type { PlantWithCategories } from "@/features/plants/types/plant";
 import { PlantForm } from "@/features/admin/components/PlantForm";
 import { ConfirmDialog } from "@/features/shared/components/ConfirmDialog";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import type { Category } from "@/generated/prisma";
+import type { Category } from "@/generated/prisma/client";
 import { CategoryForm } from "@/features/admin/components/CategoryForm";
 import { adminFetch } from "@/features/admin/hooks/useAdminData";
 import { Button } from "@/components/ui/button";

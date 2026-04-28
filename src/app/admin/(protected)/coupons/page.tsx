@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import type { Coupon } from "@/generated/prisma";
+import type { Coupon } from "@/generated/prisma/client";
 import { CouponForm } from "@/features/admin/components/CouponForm";
 import { adminFetch } from "@/features/admin/hooks/useAdminData";
 import { Button } from "@/components/ui/button";

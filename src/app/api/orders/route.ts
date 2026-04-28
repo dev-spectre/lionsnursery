@@ -1,4 +1,4 @@
-import type { Prisma } from "@/generated/prisma/client";
+import type { Prisma, Plant } from "@/generated/prisma/client";
 import { prisma } from "@/features/shared/lib/prisma";
 import { buildOrderWhereInput } from "@/lib/order-filters";
 import { requireAdmin } from "@/lib/server-utils";
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   const plantIds = [...new Set(body.items.map((i) => i.plantId))];
 
   try {
-    const order = await prisma.$transaction(async (tx: any) => {
+    const order = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       const plants = await tx.plant.findMany({
         where: {
           id: { in: plantIds },
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
       let subtotal = 0;
       const orderItems: Prisma.OrderItemCreateWithoutOrderInput[] = [];
       for (const line of body.items) {
-        const plant = plants.find((p: any) => p.id === line.plantId)!;
+        const plant = plants.find((p: Plant) => p.id === line.plantId)!;
         subtotal += plant.price * line.quantity;
         orderItems.push({
           plant: { connect: { id: plant.id } },

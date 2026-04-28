@@ -49,7 +49,7 @@ export function PlantForm({
       setImageUrl(plant.imageUrl);
       setInStock(plant.inStock);
       const sel: Record<string, boolean> = {};
-      plant.categories.forEach((c: any) => {
+      plant.categories.forEach((c) => {
         sel[c.categoryId] = true;
       });
       setSelected(sel);
