@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 import { neonConfig } from '@neondatabase/serverless';
 import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from '@/generated/prisma';
+import { PrismaClient } from '@/generated/prisma/client';
 import ws from 'ws';
 
 // Required for Neon serverless in environments without native WebSocket support

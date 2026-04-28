@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Category } from "@/generated/prisma";
+import type { Category } from "@/generated/prisma/client";
 import type { PlantWithCategories } from "@/features/plants/types/plant";
 import { ImageUpload } from "@/features/shared/components/ImageUpload";
 import { CLOUDINARY } from "@/constants";
@@ -49,7 +49,7 @@ export function PlantForm({
       setImageUrl(plant.imageUrl);
       setInStock(plant.inStock);
       const sel: Record<string, boolean> = {};
-      plant.categories.forEach((c) => {
+      plant.categories.forEach((c: any) => {
         sel[c.categoryId] = true;
       });
       setSelected(sel);

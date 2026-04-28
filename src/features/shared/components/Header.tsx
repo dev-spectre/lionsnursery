@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import type { SiteSettings } from "@/generated/prisma";
+import type { SiteSettings } from "@/generated/prisma/client";
 import { BUSINESS } from "@/constants";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";

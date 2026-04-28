@@ -1,4 +1,4 @@
-import { OrderStatus } from "@/generated/prisma";
+import { OrderStatus } from "@/generated/prisma/client";
 import { prisma } from "@/features/shared/lib/prisma";
 import { requireAdmin } from "@/lib/server-utils";
 import { orderStatusSchema } from "@/lib/validations";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { HeroSlide, SiteSettings } from "@/generated/prisma";
+import type { HeroSlide, SiteSettings } from "@/generated/prisma/client";
 import { BUSINESS } from "@/constants";
 import { cloudinaryBlurDataUrl } from "@/features/shared/lib/cloudinary";
 import { buttonVariants } from "@/components/ui/button";

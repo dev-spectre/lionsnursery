@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { HeroSlide } from "@/generated/prisma";
+import type { HeroSlide } from "@/generated/prisma/client";
 import {
   DndContext,
   closestCenter,

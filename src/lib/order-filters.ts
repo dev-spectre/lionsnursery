@@ -1,5 +1,5 @@
-import type { Prisma } from "@/generated/prisma";
-import { OrderStatus } from "@/generated/prisma";
+import type { Prisma } from "@/generated/prisma/client";
+import { OrderStatus } from "@/generated/prisma/client";
 
 /** Build Prisma `where` for admin order list + export from URL search params. */
 export function buildOrderWhereInput(url: URL): Prisma.OrderWhereInput {

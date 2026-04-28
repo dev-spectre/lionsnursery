@@ -1,4 +1,4 @@
-import type { Category, Plant, PlantCategory } from "@/generated/prisma";
+import type { Category, Plant, PlantCategory } from "@/generated/prisma/client";
 
 export type PlantWithCategories = Plant & {
   categories: (PlantCategory & { category: Category })[];

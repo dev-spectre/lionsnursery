@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { adminFetch } from "@/features/admin/hooks/useAdminData";
 import { orderStatuses } from "@/lib/validations";
-import type { Coupon } from "@/generated/prisma";
+import type { Coupon } from "@/generated/prisma/client";
 
 export type OrderFilterState = {
   from: string;

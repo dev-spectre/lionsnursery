@@ -1,6 +1,6 @@
 "use client";
 
-import type { Category } from "@/generated/prisma";
+import type { Category } from "@/generated/prisma/client";
 import { cn } from "@/lib/utils";
 
 type Props = {

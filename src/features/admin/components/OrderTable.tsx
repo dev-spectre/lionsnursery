@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Order, OrderItem } from "@/generated/prisma";
+import type { Order, OrderItem } from "@/generated/prisma/client";
 import { adminFetch } from "../hooks/useAdminData";
 import {
   Table,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { SiteSettings } from "@/generated/prisma";
+import type { SiteSettings } from "@/generated/prisma/client";
 import { adminFetch } from "../hooks/useAdminData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

@@ -1,4 +1,4 @@
-import type { SiteSettings } from "@/generated/prisma";
+import type { SiteSettings } from "@/generated/prisma/client";
 import { BUSINESS } from "@/constants";
 import { ContactForm } from "./ContactForm";
 import { MapEmbed } from "./MapEmbed";

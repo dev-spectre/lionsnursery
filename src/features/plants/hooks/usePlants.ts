@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import type { PlantWithCategories } from "../types/plant";
-import type { Category } from "@/generated/prisma";
+import type { Category } from "@/generated/prisma/client";
 
 type CategoryRow = Category & { _count?: { plants: number } };
 

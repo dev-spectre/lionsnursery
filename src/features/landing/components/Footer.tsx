@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { SiteSettings } from "@/generated/prisma";
+import type { SiteSettings } from "@/generated/prisma/client";
 import { BUSINESS } from "@/constants";
 import { Leaf } from "lucide-react";
 

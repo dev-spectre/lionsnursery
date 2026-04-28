@@ -3,7 +3,7 @@ import { prisma } from "@/features/shared/lib/prisma";
 import { cloudinaryDeliveryUrl } from "@/features/shared/lib/cloudinary";
 import { requireAdmin } from "@/lib/server-utils";
 import { heroSlideCreateSchema } from "@/lib/validations";
-import type { HeroSlide } from "@/generated/prisma";
+import type { HeroSlide } from "@/generated/prisma/client";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
