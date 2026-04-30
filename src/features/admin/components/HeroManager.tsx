@@ -27,14 +27,17 @@ import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { GripVertical, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 function SortRow({
   slide,
   onChange,
+  onRefresh,
   onDelete,
 }: {
   slide: HeroSlide;
   onChange: (patch: Partial<HeroSlide>) => void;
+  onRefresh: () => void;
   onDelete: () => void;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -103,6 +106,7 @@ function SortRow({
               if (!r.ok) toast.error("Save failed");
               else {
                 toast.success("Slide saved. Landing page updated.");
+                onRefresh();
               }
             }}
           >
@@ -126,6 +130,7 @@ function SortRow({
 export function HeroManager() {
   const [slides, setSlides] = useState<HeroSlide[]>([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -165,7 +170,10 @@ export function HeroManager() {
     if (!r.ok) {
       toast.error("Reorder failed");
       load();
-    } else toast.success("Order updated.");
+    } else {
+      toast.success("Order updated.");
+      router.refresh();
+    }
   }
 
   async function addSlide() {
@@ -177,6 +185,7 @@ export function HeroManager() {
     else {
       toast.success("Slide added.");
       load();
+      router.refresh();
     }
   }
 
@@ -212,6 +221,7 @@ export function HeroManager() {
                     prev.map((x) => (x.id === s.id ? { ...x, ...patch } : x)),
                   )
                 }
+                onRefresh={router.refresh}
                 onDelete={async () => {
                   const r = await adminFetch(`/api/hero/${s.id}`, {
                     method: "DELETE",
@@ -220,6 +230,7 @@ export function HeroManager() {
                   else {
                     toast.success("Slide removed.");
                     load();
+                    router.refresh();
                   }
                 }}
               />
